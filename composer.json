@@ -1,5 +1,5 @@
 {
-    "name": "nicolas/get-datadb",
+    "name": "nicolassmaniotto/get-datadb",
     "description": "Basic class db control",
     "autoload": {
         "psr-0":{
