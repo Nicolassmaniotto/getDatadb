@@ -26,7 +26,7 @@ clone this project and include in your pages.</h4>
         'password'=>'password for your db',
         'database'=>'name of your database'
         ];
-    $obj->getCTimestamp(); //retun a database timestamp
+    $obj->getCTimestamp(); //retun a database current_timestamp
     </h2>
     </pre>
     </li>
