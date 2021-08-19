@@ -22,7 +22,7 @@ class getDatadb{
         }
         public function getCTimestamp(){//get current_timestamp of db
 
-            $conn = $this->connect($this->conn);
+            $conn = $this->connect($this);
             $sql = "SELECT current_timestamp;";
             $result = mysqli_query($conn, $sql);
             $row   = mysqli_fetch_row($result);
