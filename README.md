@@ -15,5 +15,6 @@ clone this project and include in your pages.</h4>
     <h2>
     getCTimestamp()
     </h2>
-<li><h3> Get a current_timestamp to dataserver. | Executa uma busca pelo current_timestamp no servidor do banco de dados.
-</h3></li><ul>
+    <li><h3> Get a current_timestamp to dataserver. </h3></li>
+    <li><h3>Executa uma busca pelo current_timestamp no servidor do banco de dados.</h3></li>
+<ul>
