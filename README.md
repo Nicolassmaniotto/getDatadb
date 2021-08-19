@@ -18,12 +18,13 @@ clone this project and include in your pages.</h4>
     <li>
     <h2>Example | Exemplo</h2>
     </li>
-    <li><h2>$obj->conn =(object)[
-    'username'=>'user name database', //your username for db access
-    'servername'=>'localhost',//your servel local exmple 'localhost'
-    'password'=>'password for your db', //your password db
-    'database'=>'name of your database' //your database example 'test'
-    ]; </h2></li>
+    <li><p><h2>$obj->conn =(object)[
+        'username'=>'user name database', //your username for db access
+        'servername'=>'localhost',//your servel local exmple 'localhost'
+        'password'=>'password for your db', //your password db
+        'database'=>'name of your database' //your database example 'test'
+        ]; </h2>
+    </p></li>
     <li><h3> Get a current_timestamp to dataserver. </h3></li>
     <li><h3>Executa uma busca pelo current_timestamp no servidor do banco de dados.</h3></li>
 <ul>
