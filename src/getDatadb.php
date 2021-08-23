@@ -61,6 +61,17 @@ class getDatadb{
             mysqli_close($conn);
             return ( $result ? 'true' : 'false' ) ;
         }
+        public function createDatabase($option){
+            $conn =  mysqli_connect($option->servername, $option->username,$option->password);
+            // $conn = $this->connect_p($this);
+            $sql = "CREATE DATABASE IF NOT EXISTS $option->database ; ";
+            // echo $sql;
+            $result = mysqli_query($conn, $sql);
+            // $row   = mysqli_fetch_row($result);
+            mysqli_close($conn);
+            return ( $result ? 'true' : 'false' ) ;
+        }
+
         public function insertData($data,$table,$type){
             //Dont use big int 
             $mysqli = $this->connect_obj($this);
@@ -97,6 +108,43 @@ class getDatadb{
             $stmt->bind_param("$s",...$val);
             $stmt->execute();
             $result =  ($stmt->execute() ? 'true' : 'false');
+            $stmt->close();
+            return $result;
+            
+        }
+
+        public function getData($data,$table,$type){
+            //Dont use big int 
+            $mysqli = $this->connect_obj($this);
+            $mysqli->set_charset("utf8mb4");
+            $count = count($data);
+            $i = 0;
+            $s = "";
+            $sql  = "SELECT * FROM $table WHERE ";
+            $val = [];
+            foreach($data as $key => $value){
+                $sql .="$key = ? ";
+                $val[$i]= $value;
+                $s .= ($type[$i])? $type[$i] : "s";
+                // var_dump($val[$i]);
+                if($i <($count -1)){
+                    $sql .= '';
+                };
+                $i++;
+            }
+            $sql .= " ;";
+            // echo $sql;
+            // echo "\n";
+            // echo $s;
+            // echo "\n";
+            // var_dump($val);
+            $stmt = $mysqli->prepare("$sql");
+            $stmt->bind_param("$s",...$val);
+            // $stmt->bind_param("ss",$val[0],$val[1]);
+            $stmt->execute();
+            // $result =;
+            $result = $stmt->get_result();
+            
             $stmt->close();
             return $result;
             

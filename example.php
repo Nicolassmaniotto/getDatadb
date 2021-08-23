@@ -21,6 +21,8 @@ $data = [
     "ip"=>"198.162.100.255",
 ];
 $type=['s','s'];
+echo $getDB->createDatabase($conn); //Cria database
+echo "\n";
 echo $getDB->createTable($base,$conn->table); //cria a tabela
 echo "\n";
 echo $getDB->insertData($data,'users',$type); //insere na tabela

@@ -6,7 +6,6 @@
             "data":"src/"
         },
         "psr-4": {
-            "Nicol\\GetDatadb\\": "src/",
             "Data\\Db\\":"src/"
         }
     },
@@ -17,6 +16,7 @@
         }
     ],
     "require": {
-        "php":">=8.0"
+        "php":">=8.0",
+        "ext-mysqli": "*"
     }
 }
